@@ -1,0 +1,15 @@
+body {
+    background: rgb(218, 18, 26);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    color: whitesmoke;
+}
+
+h1, form, footer {
+    margin: 10px auto;
+}
+h1, h2, h3, footer {
+    text-align: center;
+}
+form {
+    width: 50vw;
+}

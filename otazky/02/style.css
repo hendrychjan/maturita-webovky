@@ -1,0 +1,36 @@
+/* * {
+    margin: 0;
+    padding: 0;
+} */
+
+body {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, footer {
+    text-align: center;
+}
+p {
+    text-align: justify;
+}
+p > span,
+p > strong,
+p > em {
+    color: firebrick;
+}
+nav {
+    background-color: whitesmoke;
+}
+nav ul {
+    list-style-type: none;
+}
+
+article > section {
+    padding: 1.5%;
+    text-align: center;
+}
+article > section img {
+    max-width: 100%;
+    max-height: 250px;
+}    
+

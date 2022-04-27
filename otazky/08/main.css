@@ -1,0 +1,43 @@
+* {
+    border: none;
+    font-family: sans-serif;
+}
+tr td:first-child img {
+    max-width: 152px;
+    max-height: 112px;
+}
+#galerie .navigace {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+}
+#galerie .navigace * {
+    flex-grow: 1;
+}
+#galerie .navigace .popis {
+    flex-grow: 8;
+    text-align: center;
+}
+#galerie .navigace *:last-child {
+    text-align: right;
+}
+#galerie img {
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+#galerie .nahledy {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#galerie .nahledy img {
+    flex-grow: 1;
+    max-width: calc(20% - 10px);
+}
+#galerie .nahledy img.aktualni {
+    border: 5px solid rgb(201, 137, 0);
+}
