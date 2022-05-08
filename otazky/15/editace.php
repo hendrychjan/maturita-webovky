@@ -1,41 +1,68 @@
 <?php
-    spl_autoload_register(function ($className) {
-        require_once("{$className}.class.php");
-    });
+include_once "Conn.php";
+include_once "Produkt.php";
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <?php
-    if (isset($_GET["prod"])) {
-        $p = Conn::Produkt($_GET["prod"]);
-    } else {
-        exit;
-    }
+if (isset($_GET["prod"])) {
+    // Najít produkt odpovídající zadanému Id
+    $p = Produkt::getById($_GET["prod"]);
+} else {
+    exit;
+}
+
+if (isset($_POST["submit"])) {
+    $p->fromObj($_POST); // přapsání původních hodnot instance na nové
+    $res = $p->update(); // provedení UPDATE v databázi
+    echo $res; // zobrazení výsledku operace
+}
 ?>
+
 <body>
-    <form>
-        <input type="text" name="nazev" value="<?=$p->nazev?>" />
-        <input type="text" name="alias" value="<?=$p->alias?>" />
-        <select>
-<?php
-    foreach (Conn::Kategorie() as $k):
-?>
-            <option value="<?=$k->id?>"<?php if ($p->kategorie == $k->id) echo " selected"; ?>><?=$k->nazev?></option>
-<?php
-    endforeach;
-?>
+    <form method="POST">
+        <!-- Název -->
+        <label for="nazev">Název</label>
+        <input type="text" name="nazev" id="nazev" value="<?= $p->nazev ?>" required />
+        <br />
+
+        <!-- Alias -->
+        <label for="alias">Alias</label>
+        <input type="text" name="alias" id="alias" value="<?= $p->alias ?>" required />
+        <br />
+
+        <!-- Kategorie -->
+        <label for="kategorie">Kategorie</label>
+        <select name="kategorie" id="kategorie">
+            <?php
+            foreach (Conn::Kategorie() as $k) :
+            ?>
+                <option value="<?= $k->id ?>" <?php if ($p->kategorie == $k->id) echo " selected"; ?>><?= $k->nazev ?></option>
+            <?php
+            endforeach;
+            ?>
         </select>
-        <input type="text" name="cena" value="<?=$p->cena?>" />
-        <textarea><?=$p->popis?></textarea>
-        
-        <button type="submit">Poslat</button>
+        <br />
+
+        <!-- Cena -->
+        <label for="cena">Cena</label>
+        <input type="text" name="cena" id="cena" value="<?= $p->cena ?>" required />
+        <br />
+
+        <!-- Popis -->
+        <label for="popis">Popis</label>
+        <textarea name="popis" id="popis"><?= $p->popis ?></textarea>
+        <br />
+
+        <button type="submit" name="submit">Poslat</button>
     </form>
 
 </body>
+
 </html>
