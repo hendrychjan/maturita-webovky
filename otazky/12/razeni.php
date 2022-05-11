@@ -3,10 +3,11 @@ include_once "Produkt.php";
 
 $produkty = Produkt::getAllAndPopulate($_GET["sort"]);
 
-// Extrahování base url (odstranění URL parametrů)
-function getUrl() {
-    $url = "http://" . $_SERVER['SERVER_NAME'] . ":" . $_SERVER['REQUEST_URI'];
-    return explode("?", $url)[0];
+function getCssClass($name)
+{
+    // výsledek z ternárního operátoru - pokud se parametr sort v url rovná $name,
+    // je vybraný link "selected"
+    return ($_GET["sort"] === $name) ? "selected" : "";
 }
 
 ?>
@@ -17,22 +18,51 @@ function getUrl() {
     <meta charset="utf-8" />
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        .selected {
+            color: red;
+            font-weight: 900;
+        }
+
+        a {
+            color: black;
+            font-weight: 400;
+        }
+    </style>
 </head>
 
 <body>
     <form method="get" id="razeni"></form>
     <table>
+
+        <!-- Odkazy pro řazení - záhlaví tabulky -->
         <tr>
-            <th><a href="<?php echo getUrl() ?>?sort=nazev">Název</a></th>
-            <th><a href="<?php echo getUrl() ?>?sort=cena">Cena</a></th>
-            <th><a href="<?php echo getUrl() ?>?sort=kategorie">Kategorie</a></th>
+            <th>
+                <a href="razeni.php?sort=nazev" class="<?= getCssClass("nazev") ?>">
+                    Název
+                </a>
+            </th>
+            <th>
+                <a href="razeni.php?sort=cena" class="<?= getCssClass("cena") ?>">
+                    Cena
+                </a>
+            </th>
+            <th>
+                <a href="razeni.php?sort=kategorie" class="<?= getCssClass("kategorie") ?>">
+                    Kategorie
+                </a>
+            </th>
         </tr>
-        <?php
-        // Render jednotlivých produktů
-        foreach ($produkty as $produkt) {
-            echo "<tr><td>$produkt->nazev</td><td>" . $produkt->cenaToString() . "</td><td>$produkt->kategorie</td></tr>";
-        }
-        ?>
+
+        <!-- Výsledné produkty -->
+        <?php foreach ($produkty as $produkt) : ?>
+            <tr>
+                <td><?= $produkt->nazev ?></td>
+                <td><?= $produkt->cenaToString() ?></td>
+                <td><?= $produkt->kategorie ?></td>
+            </tr>
+        <?php endforeach; ?>
     </table>
 </body>
 

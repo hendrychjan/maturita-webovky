@@ -51,11 +51,9 @@ if (isset($_POST["submit"])) {
         <!-- Kategorie -->
         <label for="kategorie">Kategorie</label>
         <select name="kategorie" id="kategorie">
-            <?php
-            foreach ($kategorie as $k) {
-                echo "<option value=\"$k->id\">$k->nazev</option>";
-            }
-            ?>
+            <?php foreach ($kategorie as $k) : ?>
+                <option value="<?= $k->id ?>"><?= $k->nazev ?></option>;
+            <?php endforeach; ?>
         </select>
         <br />
 

@@ -1,7 +1,5 @@
 <?php
 
-// Tato třída jednoduše poskytuje statickou metodu pro získání
-// instance PDO konektoru
 class DbProvider
 {
     static function getConnection()

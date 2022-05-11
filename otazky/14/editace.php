@@ -19,6 +19,7 @@ $produkt = Conn::Produkt($_GET["id"]);
 </head>
 
 <body>
+    <!-- Kontrola, jestli pod zadaným Id byl vůbec nalezen nějaký produkt -->
     <?php if (isset($produkt->id)) : ?>
         <form>
             <!-- Název -->

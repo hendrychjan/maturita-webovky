@@ -2,23 +2,6 @@
 
 include_once "Conn.php";
 
-// Funkce pro získání celého URL na stránku s editací (dynamicky)
-// Pozn: pro zjednodušení neřeší protokol (http/https)
-function getUrl($id)
-{
-    // rozdělí URL na kusy (maturita-webovky, otazky, 14, vypis.php)
-    $uri = explode("/", $_SERVER["REQUEST_URI"]);
-
-    // z rozsekaného url do pole odebere "vypis.php"
-    array_pop($uri);
-
-    $res = "http://"; // protokol (neřeší, pro zjednodušení)
-    $res .= $_SERVER["SERVER_NAME"]; // localhost
-    $res .= implode("/", $uri); // spojí rozdělené url: "maturita-webovky/otazky/14"
-    $res .= "/editace.php?id=" . $id; // přidá odkaz na stránku s editací, včetně Id parametru
-    return $res;
-}
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,18 +19,13 @@ function getUrl($id)
             <th>Cena</th>
             <th>Kategorie</th>
         </tr>
-        <?php
-        foreach (Conn::Produkty() as $p) :
-        ?>
+        <?php foreach (Conn::Produkty() as $p) : ?>
             <tr>
-                <td><a href="<?= getUrl($p->id) ?>"><?= $p->nazev ?></a></td>
+                <td><a href="editace.php?id=<?= $p->id ?>"><?= $p->nazev ?></a></td>
                 <td><?= $p->cena ?></td>
                 <td><?= $p->kategorie ?></td>
             </tr>
-
-        <?php
-        endforeach;
-        ?>
+        <?php endforeach; ?>
     </table>
 
 </body>

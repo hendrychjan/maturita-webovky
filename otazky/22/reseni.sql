@@ -65,7 +65,21 @@ CREATE TABLE kontakty (
 
 
 -- ===================================================================
--- 5. Naplnit nové struktury starými daty
+-- 5. Vytvořit indexy na vhodných atributech
+-- ===================================================================
+
+-- Index pro vyhledávání mezi jmény žáků
+CREATE INDEX idx_zaci_jmenoPrijmeni 
+ON zaci(jmenoPrijmeni);
+
+-- Index pro vyhledávání mezi jmény učitelů
+CREATE INDEX idx_ucitele_jmenoPrijmeni
+ON ucitele(jmenoPrijmeni);
+
+
+
+-- ===================================================================
+-- 6. Naplnit nové struktury starými daty
 -- ===================================================================
 
 INSERT INTO ucitele (id, jmenoPrijmeni) VALUES
@@ -95,7 +109,7 @@ INSERT INTO kontakty (idZaka, kontakt) VALUES
 
 
 -- ===================================================================
--- 6. Zkontrolovat provedené změny na některých příkladech
+-- 7. Zkontrolovat provedené změny na některých příkladech
 -- ===================================================================
 
 -- Příklad: Zjištění třídního učitele žáka "Hudec"
@@ -112,6 +126,6 @@ WHERE zaci.jmenoPrijmeni LIKE '%Šmíd%';
 
 
 -- ===================================================================
--- 7. Odstranit původní tabulku
+-- 8. Odstranit původní tabulku
 -- ===================================================================
 DROP TABLE zaci_puvodni;
