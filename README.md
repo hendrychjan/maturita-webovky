@@ -18,7 +18,7 @@ sudo chmod -R 0755 /opt/lampp/htdocs/maturita-webovky
 ||Číslo|Otázka|
 | :------------ | :------------ | :------------ |
 |:heavy_check_mark:|1|**HTML** - [Struktura dokumentu, textové prvky stránky](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/01)|
-||2|**HTML** - [Layout stránky](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/02)|
+|:heavy_check_mark:|2|**HTML** - [Layout stránky](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/02)|
 ||3|**HTML** - [Obrázky, tabulky, odkazy](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/03)|
 ||4|**HTML** - [Formuláře](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/04)|
 |:heavy_check_mark:|5|**HTML** - [Kaskádové styly CSS](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/05)|
