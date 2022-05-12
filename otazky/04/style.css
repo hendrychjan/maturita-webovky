@@ -13,3 +13,41 @@ h1, h2, h3, footer {
 form {
     width: 50vw;
 }
+
+select {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+input {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+select option {
+    color: black;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    width: 100%;
+    padding: 20px 20px;
+    margin-top: 3px;
+    transition-duration: 0.2s;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.mgr50 {
+    margin-right: 50px;
+}
+.mgl50 {
+    margin-left: 50px;
+}

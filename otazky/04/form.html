@@ -1,39 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html
+  lang="en"
+  xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spojení</title>
-    <link rel="stylesheet" href="style.css">
-
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
-<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
-<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Spojení</h1>
-<!--
-    -> stanice pro rozbalovací seznam
-    Amsterdam Centraal
-    Amsterdam Muiderpoort
-    Amsterdam Science Park
-    Diemen
-    Weesp
-    Almere Poort
-    Almere Muziekwijk
-    Almere Centrum
-    Almere Parkwijk
-    Almere Buiten
-    Almere Oostvaarders
-    Lelystad Centrum
-    Dronten
-    Kampen Zuid
-    Zwolle
--->    
-</body>
+    <form>
+      <fieldset>
+        <legend>Trasa</legend>
+
+        <table>
+          <tr>
+            <td>
+              <label for="stanice_z">Z</label>
+            </td>
+            <td>
+              <select name="stanice_z">
+                <option>Amsterdam Centraal</option>
+                <option>Amsterdam Muiderpoort</option>
+                <option>Amsterdam Science Park</option>
+                <option>Diemen</option>
+                <option>Weesp</option>
+                <option>Almere Poort</option>
+                <option>Almere Muziekwijk</option>
+                <option>Almere Centrum</option>
+                <option selected>Almere Parkwijk</option>
+                <option>Almere Buiten</option>
+                <option>Almere Oostvaarders</option>
+                <option>Lelystad Centrum</option>
+                <option>Dronten</option>
+                <option>Kampen Zuid</option>
+                <option>Zwolle</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="mgr50" for="stanice_do">Do</label>
+            </td>
+            <td>
+              <select name="stanice_do">
+                <option>Amsterdam Centraal</option>
+                <option>Amsterdam Muiderpoort</option>
+                <option>Amsterdam Science Park</option>
+                <option>Diemen</option>
+                <option>Weesp</option>
+                <option>Almere Poort</option>
+                <option>Almere Muziekwijk</option>
+                <option>Almere Centrum</option>
+                <option>Almere Parkwijk</option>
+                <option>Almere Buiten</option>
+                <option>Almere Oostvaarders</option>
+                <option>Lelystad Centrum</option>
+                <option>Dronten</option>
+                <option>Kampen Zuid</option>
+                <option>Zwolle</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+
+        <input
+          type="radio"
+          name="trasa_typ"
+          value="jednosmerna"
+          checked
+        />Jednosměrná
+        <input
+          type="radio"
+          name="trasa_typ"
+          value="zpatecni"
+          class="mgl50"
+        />Zpáteční
+      </fieldset>
+
+      <fieldset>
+        <legend>Termín</legend>
+
+        <table>
+          <tr>
+            <td>
+              <label class="mgr50" for="termin_datum">Datum</label>
+            </td>
+            <td>
+              <input name="termin_datum" type="date" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label class="mgr50" for="termin_cas">Čas</label>
+            </td>
+            <td>
+              <input name="termin_cas" type="time" />
+            </td>
+          </tr>
+        </table>
+        <input type="radio" name="termin_typ" value="odjezd" />Odjezd
+        <input
+          type="radio"
+          name="termin_typ"
+          value="prijezd"
+          class="mgl50"
+          checked
+        />Prijezd
+      </fieldset>
+
+      <fieldset>
+        <legend>Parametry</legend>
+
+        <input
+          checked
+          type="radio"
+          name="parametry_typ"
+          value="business"
+        />Business
+        <input
+          type="radio"
+          name="parametry_typ"
+          value="economy"
+          class="mgl50"
+        />Economy
+
+        <br />
+
+        <input type="checkbox" checked name="parametry_prime" />Jen přímá
+        spojení
+        <br />
+        <input type="checkbox" name="parametry_rezervace" />Použít i spoje s
+        povinnou rezervací
+      </fieldset>
+
+      <button>Vyhledat</button>
+    </form>
+  </body>
 </html>
