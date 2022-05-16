@@ -34,7 +34,7 @@ sudo chmod -R 0755 /opt/lampp/htdocs/maturita-webovky
 |:heavy_check_mark:|15|**PHP** - [Uložení editovaných dat](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/15)|
 |:heavy_check_mark:|16|**PHP** - [Smazání dat](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/16)|
 ||17|**PHP** - [Regulární výrazy, datumové a řetězcové funkce](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/17)|
-||18|**PHP** - [Vlastní uživatelské funkce](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/18)|
+|:heavy_check_mark:|18|**PHP** - [Vlastní uživatelské funkce](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/18)|
 ||19|**PHP** - [Session, cookies](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/19)|
 |:heavy_check_mark:|20|**PHP** - [Soubory](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/20)|
 |:heavy_check_mark:|21|**SQL** - [Návrh databáze, základní databázové pojmy, datové typy](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/21)|
