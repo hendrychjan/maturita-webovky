@@ -1,49 +1,77 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
-<head>
-  <meta charset="UTF-8">
-  <title>#10 Formulář</title>
-  <style>
-    * { box-sizing: border-box; }
-    .container { margin: auto; width: 800px;}
-    .form-line { margin: .5rem; }
-    button { cursor: pointer; padding: .5rem;}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>#10 Formulář</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .container {
+        margin: auto;
+        width: 800px;
+      }
+      .form-line {
+        margin: 0.5rem;
+      }
+      button {
+        cursor: pointer;
+        padding: 0.5rem;
+      }
 
-    /* Třída k editaci */
-    .form-line input { display: none; padding: .5rem; }
-    .editace .form-line input { display: initial; }
-    .editace .form-line strong { display: none; }
-  </style>
+      /* Třída k editaci */
+      .form-line input {
+        display: none;
+        padding: 0.5rem;
+      }
+      .editace .form-line input {
+        display: initial;
+      }
+      .editace .form-line strong {
+        display: none;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
 
-<!--[if gte mso 9]><xml>
-<mso:CustomDocumentProperties>
-<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
-<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
-<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
-</mso:CustomDocumentProperties>
-</xml><![endif]-->
-</head>
-<body>
-    <div class="formular editace">
+    <script type="text/javascript" defer src="script.js"></script>
+  </head>
+  <body>
     <button id="editovat" type="button">Editovat / Zrušit editaci</button>
-    <form name="webChecker">
-        <div class="form-line">
-            <strong>Název webu</strong>
-            <input type="text" name="nazev" value="Název sítě">
-        </div>
-        <div class="form-line">
-            <strong>IP adresa (192.168.1.0)</strong>
-            <input type="text" name="ip" value="92.168.1.0">
-        </div>
-        <div class="form-line">
-            <strong>URL adresa (https://web.cz|http://web.cz|www.web.cz|www.subdom.web.cz)</strong>
-            <input type="text" name="url" value="https://web.cz">
-        </div>
-        <div class="form-line">
-            <button id="validovat" type="button">Validovat formulář</button>
-        </div>
-    </form>
+
+    <div class="zobrazeni">
+      <p><b>Název webu: </b><span>Název sítě</span></p>
+      <p><b>IP Adresa: </b><span>92.168.1.0</span></p>
+      <p><b>URL Adresa: </b><span>https://web.cz</span></p>
     </div>
-  
-</body>
+
+    <div class="formular editace hide">
+      <form name="webChecker" onsubmit="alert('Wooo!')">
+        <div class="form-line">
+          <strong>Název webu</strong>
+          <input type="text" name="nazev" value="Název sítě" />
+        </div>
+        <div class="form-line">
+          <strong>IP adresa (192.168.1.0)</strong>
+          <input type="text" name="ip" value="92.168.1.0" />
+        </div>
+        <div class="form-line">
+          <strong
+            >URL adresa
+            (https://web.cz|http://web.cz|www.web.cz|www.subdom.web.cz)</strong
+          >
+          <input type="text" name="url" value="https://web.cz" />
+        </div>
+        <div class="form-line">
+          <button id="validovat" type="button">Validovat formulář</button>
+        </div>
+        <div class="form-line">
+          <button id="odeslat" type="submit">Odeslat</button>
+        </div>
+
+        <p class="vysledek-validace"></p>
+      </form>
+    </div>
+  </body>
 </html>

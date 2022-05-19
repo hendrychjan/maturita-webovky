@@ -26,7 +26,7 @@ sudo chmod -R 0755 /opt/lampp/htdocs/maturita-webovky
 |:heavy_check_mark:|7|**JS** - [Základy programování](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/07)|
 |:heavy_check_mark:|8|**JS** - [Uživatelské funkce](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/08)|
 |:heavy_check_mark:|9|**JS** - [Objekty Date, Math, String](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/09)|
-||10|**JS** - [Dynamické formuláře, kontrola dat, regulární výrazy](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/10)|
+|:heavy_check_mark:|10|**JS** - [Dynamické formuláře, kontrola dat, regulární výrazy](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/10)|
 |:heavy_check_mark:|11|**PHP** - [Vyhledávání a filtr dat](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/11)|
 |:heavy_check_mark:|12|**PHP** - [Výpis a řazení dat](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/12)|
 |:heavy_check_mark:|13|**PHP** - [Vložení dat do databáze](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/13)|
