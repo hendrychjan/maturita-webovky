@@ -41,4 +41,4 @@ sudo chmod -R 0755 /opt/lampp/htdocs/maturita-webovky
 |:heavy_check_mark:|22|**SQL** - [Normalizace dat, klíče, indexy](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/22)|
 |:heavy_check_mark:|23|**SQL** - [Základy SQL příkazů, přidávání, úprava a odstranění dat](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/23)|
 |:heavy_check_mark:|24|**SQL** - [Výpis dat, vestavěné funkce](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/24)|
-||25|**SQL** - [Spojování více tabulek, seskupování výsledků](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/25)|
+|:heavy_check_mark:|25|**SQL** - [Spojování více tabulek, seskupování výsledků](https://github.com/hendrychjan/maturita-webovky/tree/main/otazky/25)|
